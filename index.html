@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusForge 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Nunito: rounded, friendly, playful — perfect for a cozy app -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <!-- Decorative floating background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+ 
+  <div class="app">
+ 
+    <!-- ── HEADER WITH MASCOT ── -->
+    <header class="header">
+ 
+      <!-- Cute blob mascot — reacts via JS class toggling -->
+      <div class="mascot" id="mascot">
+        <div class="speech-bubble" id="speechBubble"></div>
+        <div class="mascot-body">
+          <div class="mascot-face">
+            <div class="mascot-eyes">
+              <div class="eye"><div class="pupil"></div></div>
+              <div class="eye"><div class="pupil"></div></div>
+            </div>
+            <div class="mascot-mouth" id="mascotMouth"></div>
+          </div>
+          <!-- little cheek blushes -->
+          <div class="cheeks">
+            <div class="cheek"></div>
+            <div class="cheek"></div>
+          </div>
+          <!-- tiny sparkles that appear on task complete -->
+          <div class="sparkles" id="sparkles">
+            <span>✨</span><span>⭐</span><span>✨</span>
+          </div>
+        </div>
+        <!-- shadow under mascot -->
+        <div class="mascot-shadow"></div>
+      </div>
+ 
+      <h1 class="app-title">FocusForge</h1>
+      <p class="tagline">Your cozy productivity pal! 🌸</p>
+    </header>
+ 
+    <!-- ── GAME HUD: XP / LEVEL / STREAK ── -->
+    <div id="stats" class="hud">
+      <div class="hud-card hud-xp">
+        <span class="hud-icon">⚡</span>
+        <div>
+          <div class="hud-label">XP Points</div>
+          <div class="hud-value" id="xpVal">0</div>
+        </div>
+      </div>
+      <div class="hud-card hud-level">
+        <span class="hud-icon">🏆</span>
+        <div>
+          <div class="hud-label">Level</div>
+          <div class="hud-value" id="levelVal">1</div>
+        </div>
+      </div>
+      <div class="hud-card hud-streak">
+        <span class="hud-icon">🔥</span>
+        <div>
+          <div class="hud-label">Streak</div>
+          <div class="hud-value" id="streakVal">0</div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- ── TASK COUNTER BAR ── -->
+    <div id="taskState" class="task-counter">
+      🌟 Total: 0 &nbsp;·&nbsp; ✅ Done: 0 &nbsp;·&nbsp; 📝 Left: 0
+    </div>
+ 
+    <!-- ── FILTER PILLS ── -->
+    <div id="filters" class="filter-row">
+      <button class="filter-btn active" onclick="setFilter('all', event)">🗂 All</button>
+      <button class="filter-btn" onclick="setFilter('active', event)">🌱 Active</button>
+      <button class="filter-btn" onclick="setFilter('completed', event)">🎉 Done</button>
+    </div>
+ 
+    <!-- ── ADD TASK CONTROLS ── -->
+    <div class="controls">
+      <div class="select-wrapper">
+        <select id="priority" onchange="updatePriorityStyle()">
+          <option value="high">🔴 High</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="low">🟢 Low</option>
+        </select>
+      </div>
+      <div class="input-wrapper">
+        <input type="text" id="taskInput" placeholder="What do you want to do? ✏️" autocomplete="off" />
+        <button class="add-btn" id="addBtn" onclick="addTaskFromButton()">+</button>
+      </div>
+    </div>
+ 
+    <!-- ── TASK LIST ── -->
+    <ul id="taskList"></ul>
+ 
+    <!-- ── KEYBOARD HINTS ── -->
+    <div class="shortcuts">
+      <span class="shortcut"><kbd>↑↓</kbd> move</span>
+      <span class="shortcut"><kbd>D</kbd> done</span>
+      <span class="shortcut"><kbd>X</kbd> delete</span>
+      <span class="shortcut"><kbd>/</kbd> type</span>
+    </div>
+ 
+  </div><!-- end .app -->
+ 
+  <script src="script.js"></script> 
+</body>
+</html>
