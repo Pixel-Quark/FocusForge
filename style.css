@@ -24,9 +24,9 @@
   --low-bg:       #d6f7e8;
 
   /* Text */
-  --text-dark:    #4a3f5c;
-  --text-mid:     #7a6f8a;
-  --text-soft:    #a89dba;
+  --text-dark:    #413741;
+  --text-mid:     #101010;
+  --text-soft:    #161418;
 
   /* Radii */
   --r-sm:   12px;
@@ -56,7 +56,7 @@
 /* Warm cream background with a soft dot pattern for coziness */
 body {
   font-family: var(--font-body);
-  background-color: #fdf6ff;
+  background-color: #ab7fb8;
   background-image:
     radial-gradient(circle, rgba(212,184,240,0.25) 1px, transparent 1px);
   background-size: 28px 28px;
